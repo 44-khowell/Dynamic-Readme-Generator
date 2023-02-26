@@ -21,6 +21,28 @@ function writeToFile(fileName, data) {
     );
 }
 
+function getlicenceBadge(license) {
+    switch(license) {
+        case 'Morzilla Public License':
+            return '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)';
+
+        case 'GNU General Public License v3.0':
+            return '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)';
+
+        case 'MIT Licence':
+            console.log('switch license MIT selected');
+            return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
+
+        case 'Apache License 2.0':
+            return '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
+
+        case 'None':
+            return 'Awaiting Application';
+        default:
+            'Please select a licence option'
+        }
+}
+
 const promptUser = () => {
 
     return inquirer.prompt ([
@@ -48,7 +70,7 @@ const promptUser = () => {
             type: 'list',
             name: 'projectLicense',
             message: 'Please enter choose a license for your project from options given?',
-            choices: ['MIT Licence', 'GNU General Public License v3.0', 'Apache License 2.0', 'Morzilla Public License'],
+            choices: ['MIT Licence', 'GNU General Public License v3.0', 'Apache License 2.0', 'Morzilla Public License', 'None'],
         },
         {
             type: 'input',
@@ -71,11 +93,17 @@ async function init() {
     try {
         const answers = await promptUser();
         console.log(answers);
+        console.log(answers.projectLicense);
 
-        const template = generateMarkdown(answers);
+        // Obtain a badge for the chosen license
+        const projectBadge = getlicenceBadge(answers.projectLicense);
+        console.log('switch return: ', projectBadge);
+        // Populate template with user responses 
+        const template = generateMarkdown(answers, projectBadge);
         //console.log('sample template: ', template);
 
-        writeToFile('sampleReadme.md', template);
+        // Save populated template to ReadMe.md file 
+        writeToFile('./templates/sampleReadme7.md', template);
     }
     catch(err) {
         if (err) {

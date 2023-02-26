@@ -1,27 +1,33 @@
 // function to generate markdown for README
-function generateMarkdown(data) {  
+function generateMarkdown(data, badge) {  
   return `
 # **${data.projectTitle}** 
 
-## Badges
+#### Badges
+  ${badge}
 
 ## Description
+<hr>
     ${data.projectDescription}  
 
 
 ## Table of Contents
-
+** **
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)
 - [License](#license)
+- [How to Contribute](#how-to-contribute)
+- [Tests](#tests)
+- [Questions](#questions)
 
 
 ## Installation
+<hr>
     ${data.projectInstall}
 
 
 ## Usage
+<hr>
     ${data.projectUsage}
 
 
@@ -32,9 +38,11 @@ function generateMarkdown(data) {
 
 
 ## Tests
+<hr>
 
 
 ## Questions
+<hr>
   - ${data.gitHub}
   - ${data.emailAddress}
 `;

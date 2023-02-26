@@ -15,6 +15,10 @@ const questions = [
 
 // function to write README file
 function writeToFile(fileName, data) {
+
+    fs.writeFile(fileName, data, (err) =>
+        err ? console.error(err) : console.log('success')
+    );
 }
 
 const promptUser = () => {
@@ -66,12 +70,19 @@ async function init() {
     console.log('Now in init function');
     try {
         const answers = await promptUser();
-
         console.log(answers);
-        console.log('executed code successfully');
+
+        const template = generateMarkdown(answers);
+        //console.log('sample template: ', template);
+
+        writeToFile('sampleReadme.md', template);
     }
     catch(err) {
-        console.log(err);
+        if (err) {
+            console.error(err);
+        } else {
+            console.log('Overall success')
+        }
     }
 };
 

@@ -4,7 +4,6 @@ const path = require('path');
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
 const getActualLicense = require("./utils/licenses");
-// import { getActualLicense } from "./utils/licenses.js";
 
 // array of questions for user
 const questions = [
@@ -93,8 +92,6 @@ const promptUser = () => {
 
 // function to initialize program
 async function init() {
-    console.log('Now in init function');
-    
     try {
         const answers = await promptUser();
         console.log(answers);
@@ -102,7 +99,7 @@ async function init() {
 
         // Obtain a badge for the chosen license
         const projectBadge = getlicenceBadge(answers.projectLicense);
-        console.log('switch return: ', projectBadge);
+        //console.log('switch return: ', projectBadge);
 
         const chosenLicense = getActualLicense(answers.projectLicense);
 
@@ -111,7 +108,7 @@ async function init() {
         //console.log('sample template: ', template);
 
         // Save populated template to ReadMe.md file 
-        writeToFile('./templates/k-sampleReadme9.md', template);
+        writeToFile('./templates/k-sampleReadme23.md', template);
     }
     catch(err) {
         if (err) {

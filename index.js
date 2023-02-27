@@ -1,7 +1,10 @@
+
 const fs = require("fs");
 const path = require('path');
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
+const getActualLicense = require("./utils/licenses");
+// import { getActualLicense } from "./utils/licenses.js";
 
 // array of questions for user
 const questions = [
@@ -21,6 +24,7 @@ function writeToFile(fileName, data) {
     );
 }
 
+// Function to assign Badges to user choice in projectLicense
 function getlicenceBadge(license) {
     switch(license) {
         case 'Morzilla Public License':
@@ -30,7 +34,6 @@ function getlicenceBadge(license) {
             return '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)';
 
         case 'MIT Licence':
-            console.log('switch license MIT selected');
             return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
 
         case 'Apache License 2.0':
@@ -87,23 +90,28 @@ const promptUser = () => {
     
 };
 
+
 // function to initialize program
 async function init() {
     console.log('Now in init function');
+    
     try {
         const answers = await promptUser();
         console.log(answers);
-        console.log(answers.projectLicense);
+        //console.log(answers.projectLicense);
 
         // Obtain a badge for the chosen license
         const projectBadge = getlicenceBadge(answers.projectLicense);
         console.log('switch return: ', projectBadge);
+
+        const chosenLicense = getActualLicense(answers.projectLicense);
+
         // Populate template with user responses 
-        const template = generateMarkdown(answers, projectBadge);
+        const template = generateMarkdown(answers, projectBadge, chosenLicense);
         //console.log('sample template: ', template);
 
         // Save populated template to ReadMe.md file 
-        writeToFile('./templates/sampleReadme7.md', template);
+        writeToFile('./templates/sampleReadme14.md', template);
     }
     catch(err) {
         if (err) {

@@ -1,5 +1,5 @@
 // function to generate markdown for README
-function generateMarkdown(data, badge) {  
+function generateMarkdown(data, badge, licence) {  
   return `
 # **${data.projectTitle}** 
 
@@ -32,7 +32,7 @@ function generateMarkdown(data, badge) {
 
 
 ## License
-    ${data.projectLicense}
+    ${licence}
 
 ## How to Contribute
 
@@ -43,8 +43,11 @@ function generateMarkdown(data, badge) {
 
 ## Questions
 <hr>
-  - ${data.gitHub}
-  - ${data.emailAddress}
+
+  * My GitHub Link: <${data.gitHub}>
+
+  * Email contact: ${data.emailAddress}
+
 `;
 }
 

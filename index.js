@@ -111,7 +111,7 @@ async function init() {
         //console.log('sample template: ', template);
 
         // Save populated template to ReadMe.md file 
-        writeToFile('./templates/sampleReadme14.md', template);
+        writeToFile('./templates/k-sampleReadme9.md', template);
     }
     catch(err) {
         if (err) {

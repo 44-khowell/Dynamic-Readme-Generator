@@ -60,7 +60,11 @@ Readme.md Output generated:
  
  ## Page Link
  
- Project Demo Video: https://drive.google.com/file/d/1A3V2pOjmklwdRIccCSqVXehiL69e59-0/view
+  - Project Demo Video: https://drive.google.com/file/d/1A3V2pOjmklwdRIccCSqVXehiL69e59-0/view
+ 
+  - The URL of the GitHub repository: https://github.com/44-khowell/Dynamic-Readme-Generator
+ 
+  - URL of the deployed application: https://44-khowell.github.io/Dynamic-Readme-Generator/
  
  ## Credits
 

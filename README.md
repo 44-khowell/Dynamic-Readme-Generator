@@ -46,6 +46,17 @@ Display Licence BADGE
  
  ## Mock-Up
 
+User Prompt with Questions generated plus Object Array creation
+![Demo-usecase-scenario](https://user-images.githubusercontent.com/119610043/221847505-e8af1793-abc1-4d49-85de-325327d7253c.png)
+
+Readme.md Output generated: 
+![Readme-p1](https://user-images.githubusercontent.com/119610043/221849380-5b2080b3-cd3c-4e78-be95-9a52c82b8cd5.png)
+![Readme-p2](https://user-images.githubusercontent.com/119610043/221849414-037f17f1-bc2f-43dc-bf9e-9c0220deb6d9.png)
+![Readme-p3](https://user-images.githubusercontent.com/119610043/221849445-a7547798-605e-4e55-be1e-ca17d5f2a468.png)
+![Readme-p4](https://user-images.githubusercontent.com/119610043/221849466-0747243e-597d-40c2-b618-77ab7613ec31.png)
+
+
+
  
  ## Page Link
  

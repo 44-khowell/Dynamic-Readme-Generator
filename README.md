@@ -32,7 +32,7 @@ Display Licence BADGE
       * Contributions
       * Test 
       * Questions
-      * 
+      
   - Installation instructions   
   - Usage Information
   - Licence (choose from a LIST of x5 licenses) 

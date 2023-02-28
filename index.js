@@ -120,12 +120,10 @@ const promptUser = () => {
 async function init() {
     try {
         const answers = await promptUser();
-        console.log(answers);
-        //console.log(answers.projectLicense);
+        //console.log(answers);
 
         // Obtain a badge for the chosen license
         const projectBadge = getlicenceBadge(answers.projectLicense);
-        //console.log('switch return: ', projectBadge);
 
         const chosenLicense = getActualLicense(answers.projectLicense);
 
@@ -134,7 +132,7 @@ async function init() {
         //console.log('sample template: ', template);
 
         // Save populated template to ReadMe.md file 
-        writeToFile('./templates/k-sampleReadme27.md', template);
+        writeToFile('README.md', template);
     }
     catch(err) {
         if (err) {

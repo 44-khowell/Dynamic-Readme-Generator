@@ -5,15 +5,6 @@ const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
 const getActualLicense = require("./utils/licenses");
 
-// array of questions for user
-const questions = [
-    {
-        question: 'Please enter the title of your project?'
-    },
-    {
-        question: 'Please enter a description of your project?'
-    },
-];
 
 // function to write README file
 function writeToFile(fileName, data) {
@@ -45,28 +36,53 @@ function getlicenceBadge(license) {
         }
 }
 
+// Function for displaying / prompting user with questions
 const promptUser = () => {
 
     return inquirer.prompt ([
         {
             type: 'input',
             name: 'projectTitle',
-            message: 'Please enter the title of your project?'
+            message: 'Please enter the title of your project?',
+            validate: (answer) => {
+                if (answer === ''){
+                    return 'Please enter a project title!'
+                }
+                return true
+            }
         },
         {
             type: 'input',
             name: 'projectDescription',
-            message: 'Please enter a description of your project?'
+            message: 'Please enter a description of your project?',
+            validate: (answer) => {
+                if (answer === ''){
+                    return 'Please enter a project desription!'
+                }
+                return true
+            }
         },
         {
             type: 'input',
             name: 'projectInstall',
-            message: 'Please enter Installation Instructions for your project?'
+            message: 'Please enter Installation Instructions for your project?',
+            validate: (answer) => {
+                if (answer === ''){
+                    return 'Please enter Instructions for this project!'
+                }
+                return true
+            }
         },
         {
             type: 'input',
             name: 'projectUsage',
-            message: 'Please enter Usage information for your project?'
+            message: 'Please enter Usage information for your project?',
+            validate: (answer) => {
+                if (answer === ''){
+                    return 'Please enter a Usage details for this Project!'
+                }
+                return true
+            }
         },
         {
             type: 'list',
@@ -77,16 +93,26 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'gitHub',
-            message: 'What is your GitHub Username?'
+            message: 'What is your GitHub Username?',
+            validate: (answer) => {
+                if (answer === ''){
+                    return 'Please enter a valid Github Username!'
+                }
+                return true
+            }
         },
         {
             type: 'input',
             name: 'emailAddress',
-            message: 'What is your email address?'
+            message: 'What is your email address?',
+            validate: (answer) => {
+                if (answer === ''){
+                    return 'Please enter a valid email address!'
+                }
+                return true
+            }
         },
-
-    ]);
-    
+    ]);  
 };
 
 
@@ -108,7 +134,7 @@ async function init() {
         //console.log('sample template: ', template);
 
         // Save populated template to ReadMe.md file 
-        writeToFile('./templates/k-sampleReadme23.md', template);
+        writeToFile('./templates/k-sampleReadme27.md', template);
     }
     catch(err) {
         if (err) {

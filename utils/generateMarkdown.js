@@ -22,10 +22,10 @@ function generateMarkdown(data, badge, licence) {
 ** **
 - [Installation](#installation)
 - [Usage](#usage)
-- [License](#license)
-- [How to Contribute](#how-to-contribute)
-- [Tests](#tests)
-- [Questions](#questions)
+- [License](#license-\u{1f4cc})
+- [How to Contribute](#how-to-contribute-\u{1f4cc})
+- [Tests](#tests-\u{1f4cc})
+- [Questions](#questions-\u{1f4cc})
 
 
 ## Installation
@@ -94,6 +94,7 @@ This gesture of appreciation encourages contributors and helps us grow our commu
 ## Tests \u{1f4cc}
 <hr>
 
+### User input valided for empty invalid responses to questions. 
 
 ## Questions \u{1f4cc}
 ** **
